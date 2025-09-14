@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Students</title>
+  <link rel="stylesheet" href="all-students.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <h2>Admin Dashboard</h2>
+      <ul>
+        <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+        <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+        <li><a href="/Courses/courses.html">📘 Courses</a></li>
+        <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+        <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+        <li><a href="#">👩‍🎓 Students</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1>All Students</h1>
+
+      <!-- 🔍 Search Bar -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search by name or email..." />
+      </div>
+
+      <!-- Students Table -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Batch</th>
+              <th>Phone Number</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="students-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button id="prevBtn">⬅ Previous</button>
+        <span id="pageIndicator">Page 1 of <span id="totalPages">1</span></span>
+        <button id="nextBtn">Next ➡</button>
+      </div>
+    </main>
+    <!-- Edit Student Modal -->
+<div id="editStudentModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeEditModal()">&times;</span>
+    <h2>Edit Student</h2>
+    <form id="editStudentForm">
+      <input type="hidden" id="editStudentId">
+
+      <label for="editName">Full Name</label>
+      <input type="text" id="editName" required>
+
+      <label for="editEmail">Email</label>
+      <input type="email" id="editEmail" required>
+
+      <label for="editBatch">Batch</label>
+      <select id="editBatch" required>
+        <option value="">Loading...</option>
+      </select>
+
+      <button type="submit">Save Changes</button>
+    </form>
+    </div>
+    </div>
+  </div>
+  <script src="all-students.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin-dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+      <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+      <li><a href="/Courses/courses.html">📘 Courses</a></li>
+      <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+      <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+      <li><a href="/Admin/all-students.html">👩‍🎓 Students</a></li>
+      <li><a href="#" id="logoutBtn">🚪 Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <h1>Welcome, Admin</h1>
+    <button id="sidebarToggle" aria-label="Toggle Sidebar" style="position:fixed; top:10px; left:10px; z-index:1100;">
+    ☰
+    </button>
+
+    <!-- Quick Actions Bar -->
+    <div class="quick-actions">
+      <button id="toggleQuickActions">⚡ Quick Actions</button>
+      <div id="actionsContainer" class="actions-list">
+        <button type="button" onclick="addCourse(event)">➕ Add Course</button>
+        <button type="button" onclick="addTopic(event)">📘 Add Topic</button>
+        <button type="button" onclick="addBatch(event)">📁 Add Batch</button>
+        <button type="button" onclick="addInstructor(event)">👨‍🏫 Add Instructor</button>
+        <button type="button" onclick="generateSchedule(event)">🗓 Generate Schedule</button>
+        <button type="button" onclick="window.location.href='/Admin/unscheduledTopic.html'">Unscheduled Topics</button>
+        <button type="button" onclick="window.location.href='/Admin/students-distribution.html'">Student Distribution</button>
+        <!-- <button type="button" onclick="loadUnassignedTopics()">📘 Unassigned Topics</button> -->
+      </div>
+    </div>
+
+    <!-- Unassigned Topics -->
+    <div>
+      <h4>Unassigned Topics</h4>
+      <ul id="unassignedTopicList"></ul>
+    </div>
+
+    <!-- Recent Registrations & Notifications -->
+    <div class="dashboard-widgets">
+      <!-- Recent Registrations -->
+      <div class="card">
+        <h3>Recent Registrations</h3>
+        <ul id="registrations-list" class="registrations-list">
+          <li>Loading...</li>
+        </ul>
+        <button onclick="window.location.href='/Admin/all-students.html'">View All</button>
+      </div>
+
+      <!-- Notifications -->
+      <div class="card">
+        <h3>Notifications</h3>
+        <ul id="notifications-list" class="notifications-list">
+          <li>Loading...</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="cards">
+      <div class="card">
+        <h3>Total Students</h3>
+        <p id="studentCount">Loading...</p>
+      </div>
+      <div class="card">
+        <h3>Total Instructors</h3>
+        <p id="instructorCount">Loading...</p>
+      </div>
+      <div class="card">
+        <h3>Total Batches</h3>
+        <p id="batchCount">Loading...</p>
+      </div>
+      <div class="card">
+        <h3>Total Courses</h3>
+        <p id="courseCount">Loading...</p>
+      </div>
+    </div>
+
+    <!-- Google Calendar -->
+    <section class="section">
+      <h2>My Google Calendar</h2>
+      <iframe id="calendarFrame"
+          src=""
+          style="border: 0; width: 100%; height: 600px; display: none;"
+          frameborder="0"
+          scrolling="no">
+      </iframe>
+      <button id="connectCalendarBtn">Connect Google Calendar</button>
+    </section>
+  </div>
+   
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>

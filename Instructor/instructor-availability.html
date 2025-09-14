@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instructor Availabilities</title>
+  <link rel="stylesheet" href="instructor-availability.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2 style="font-size: 1.1rem; word-break: break-word;">Admin Dashboard</h2>
+      <nav>
+        <ul>
+          <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+          <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+          <li><a href="/Courses/courses.html">📘 Courses</a></li>
+          <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+          <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+          <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header>
+        <h1>Instructor Availabilities</h1>
+      </header>
+      <div class="section">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+            </tr>
+          </thead>
+          <tbody id="availabilityTableBody">
+            <tr><td colspan="3">Loading availabilities...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Move the FAB container here -->
+  <div id="addAvailabilityContainer"></div>
+
+  <script src="instructor-availability.js"></script>
+</body>
+</html>

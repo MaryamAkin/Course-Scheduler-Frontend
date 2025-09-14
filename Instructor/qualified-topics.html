@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualified Topics</title>
+    <link rel="stylesheet" href="qualified-topics.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+            <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+            <li><a href="/Courses/courses.html">📘 Courses</a></li>
+            <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+            <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+            <li><a href="#">👩‍🎓 Students</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1>Qualified Topics</h1>
+        <button id="assignBtn" class="assign-btn">➕ Assign Topics</button>
+        <table id="topicsTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Populated dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="qualified-topics.js"></script>
+</body>
+</html>

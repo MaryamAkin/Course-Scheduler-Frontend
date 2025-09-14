@@ -1,0 +1,157 @@
+/* Copy your existing CSS and adjust slightly for this page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f0f8ff;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #1e3a8a;
+    color: #fff;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a.active,
+.sidebar nav ul li a:hover {
+    background-color: #1e3a8a;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+header h1 {
+    color: #1e3a8a;
+    margin-bottom: 0.3rem;
+    font-size: 1.8rem;
+}
+
+header p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+}
+
+table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+/* Floating Add Button */
+/* Floating Add Button */
+#addAvailabilityContainer {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+#addAvailabilityContainer .fab-btn {
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+#addAvailabilityContainer .fab-btn:hover {
+    background-color: #1e3a8a;
+    transform: scale(1.1);
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button,
+a.button-link {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover,
+a.button-link:hover {
+  background-color: #1e40af;
+}

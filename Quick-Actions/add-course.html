@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Course</title>
+  <link rel="stylesheet" href="add-course.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Add New Course</h1>
+    <form id="addCourseForm">
+      <label for="title">Course Title:</label>
+      <input type="text" id="title" name="title" placeholder="Enter course title" required />
+      
+      <!-- <button type="submit">Save Course</button> -->
+      <button onclick="addCourse()">➕ Add Course</button>
+    </form>
+    <p id="message"></p>
+  </div>
+  
+  <script src="add-course.js"></script>
+</body>
+</html>

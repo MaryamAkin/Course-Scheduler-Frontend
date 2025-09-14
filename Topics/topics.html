@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topic Management</title>
+  <link rel="stylesheet" href="topics.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Admin Dashboard</h2>
+      <ul>
+        <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+      <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+      <li><a href="/Courses/courses.html">📘 Courses</a></li>
+      <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+      <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+      <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <h1>Manage Topics</h1>
+
+      <button id="toggleFormBtn">Add Topic</button>
+
+      <form id="addTopicForm" style="display: none;">
+        <input type="text" id="title" placeholder="Topic Title" required />
+        <input type="number" id="duration" placeholder="Duration (minutes)" required />
+        <select id="courseSelect" required></select>
+        <button type="submit">Submit</button>
+      </form>
+
+      <input type="text" id="searchInput" placeholder="Search topic title..." />
+
+      <table id="topicsTable">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Duration</th>
+            <th>Course</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div id="pagination"></div>
+    </main>
+  </div>
+
+  <script src="topics.js"></script>
+</body>
+</html>

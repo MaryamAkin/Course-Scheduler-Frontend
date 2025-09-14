@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="my-details.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2><i class="fa-solid fa-chalkboard-user"></i> Instructor</h2>
+      <ul>
+            <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+            <li><a href="/Instructor/upcoming-classes.html"><i class="fa-solid fa-calendar-days"></i> Upcoming Classes</a></li>
+            <li><a href="/Instructor/my-topics.html"><i class="fa-solid fa-book"></i> Assigned Topics</a></li>
+            <li><a href="#"><i class="fa-solid fa-users"></i> Students</a></li>
+            <li><button id="logoutBtn" style="background:none; border:none; color:inherit; cursor:pointer;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1 id="greetingEl">Welcome, Instructor</h1>
+
+      <div class="profile-card">
+        <div class="profile-photo">
+          <img id="instructorAvatar" src="/assets/default-avatar.png" alt="Profile Picture">
+          <button id="editPhotoBtn">Edit Photo</button>
+        </div>
+        <div class="profile-info">
+          <p><strong>Name:</strong> <span id="instructorName">Loading...</span></p>
+          <p><strong>Email:</strong> <span id="instructorEmail">Loading...</span></p>
+          <p><strong>Gender:</strong> <span id="instructorGender">Loading...</span></p>
+          <p><strong>Phone Number:</strong> <span id="instructorPhone">Loading...</span></p>
+          <a id="availabilityLink" class="btn" href="/Instructor/manage-availability.html">📅 View Availability</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="my-details.js"></script>
+</body>
+</html>

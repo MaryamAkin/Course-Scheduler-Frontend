@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Student Dashboard</h2>
+      <ul>
+        <li><a href="/Student/student-dashboard.html">🏠 Dashboard</a></li>
+        <li><a href="#" id="myCoursesLink">📚 My Courses</a></li>
+        <li><a href="/Student/periods.html">📅 Schedule</a></li>
+        <li><a href="/Student/profile.html">👤 Profile</a></li>
+        <li><a href="#" id="logoutBtn">🚪 Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1 id="greetingEl">Welcome, Student</h1>
+
+      <div class="profile-card">
+        <div class="profile-photo">
+          <img id="studentAvatar" src="/assets/default-avatar.png" alt="Profile Picture">
+          <button id="editPhotoBtn">Edit Photo</button>
+        </div>
+        <div class="profile-info">
+          <p><strong>Name:</strong> <span id="studentName">Loading...</span></p>
+          <p><strong>Email:</strong> <span id="studentEmail">Loading...</span></p>
+          <p><strong>Gender:</strong> <span id="studentGender">Loading...</span></p>
+          <p><strong>Batch:</strong> <span id="studentBatch">Loading...</span></p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Classes</title>
+    <link rel="stylesheet" href="all-classes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2><i class="sidebar-title fa-solid fa-chalkboard-user"></i> Instructor</h2>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+                <li class="active"><a href="#"><i class="fa-solid fa-calendar-days"></i> Upcoming Classes</a></li>
+                <li><a href="#"><i class="fa-solid fa-book"></i> Assigned Topics</a></li>
+                <li><a href="#"><i class="fa-solid fa-users"></i> Students</a></li>
+                <li>
+                    <button id="logoutBtn" style="background:none; border:none; color:inherit; cursor:pointer;">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h1>All Classes</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Batch</th>
+                        <th>Topic Title</th>
+                    </tr>
+                </thead>
+                <tbody id="classesTableBody">
+                    <!-- JS will populate here -->
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button id="prevPage">Previous</button>
+                <span id="pageInfo"></span>
+                <button id="nextPage">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="all-classes.js"></script>
+</body>
+</html>

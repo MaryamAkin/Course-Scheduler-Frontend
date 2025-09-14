@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batches in Course</title>
+  <link rel="stylesheet" href="batches-in-course.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <!-- <h2><i class="fa-solid fa-chalkboard-user"></i> Instructor</h2> -->
+      <ul>
+            <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+            <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+            <li><a href="/Courses/courses.html">📘 Courses</a></li>
+            <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+            <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+            <button id="logoutBtn" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <h1>Batches in Course</h1>
+      <div id="batchesContainer" class="batches-container">
+        <!-- JS will populate batches and instructors here -->
+      </div>
+    </main>
+  </div>
+
+  <script src="batches-in-course.js"></script>
+</body>
+</html>

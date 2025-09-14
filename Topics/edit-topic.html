@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Topic</title>
+  <link rel="stylesheet" href="edit-topic.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Topic</h1>
+    <form id="editTopicForm">
+      <label for="title">Title:</label>
+      <input type="text" id="title" required>
+
+      <label for="duration">Duration (in minutes):</label>
+      <input type="number" id="duration" required>
+
+      <label for="courseSelect">Course:</label>
+      <select id="courseSelect" required></select>
+
+      <button type="submit">Update Topic</button>
+    </form>
+  </div>
+
+  <script src="edit-topic.js"></script>
+</body>
+</html>

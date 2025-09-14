@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Instructors for Topic</title>
+    <link rel="stylesheet" href="instructors-in-topic.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <h2 id="topicTitleDisplay" class="text-xl font-bold mb-4 text-blue-900"></h2>
+            <ul>
+                <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+                <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+                <li><a href="/Courses/courses.html">📘 Courses</a></li>
+                <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+                <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+                <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h1 id="pageTitle">Instructors Topic</h1>
+            <button id="assignInstructorBtn" class="assign-btn">➕ Assign Instructor</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="instructorsTableBody">
+                    <!-- Instructors will populate here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="assignModal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>Assign Instructor</h2>
+
+                <!-- Scrollable Checkbox List -->
+                <div id="instructorCheckboxes" class="checkbox-container" style="max-height: 250px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+                    <!-- Checkboxes will be added here by JS -->
+                </div>
+
+                <button id="assignBtn" class="assign-confirm-btn">Assign</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="instructors-in-topic.js"></script>
+</body>
+</html>

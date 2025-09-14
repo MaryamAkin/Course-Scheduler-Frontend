@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periods in Batch</title>
+  <link rel="stylesheet" href="periods-in-batch.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+      <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+      <li><a href="/Courses/courses.html">📘 Courses</a></li>
+      <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+      <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+      <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h1 id="courseTitle">Loading Course...</h1>
+    <h1>Periods in Batch</h1>
+    <div class="actions">
+      <button id="addPeriodBtn">Add Period</button>
+      <button id="runSchedulerBtn">Run Scheduler</button>
+      <div id="schedulerProgress" style="display:none; margin-top:10px;">
+      <div id="progressBar" style="height:20px;width:0%;background:#1e3a8a;color:white;text-align:center;">0%</div>
+    </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Instructor</th>
+          <th>Topic</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="periodsTableBody"></tbody>
+    </table>
+
+    <!-- Pagination controls -->
+    <div id="paginationControls" class="pagination">
+      <button id="prevPageBtn" onclick="changePage(-1)">Previous</button>
+      <span id="pageInfo">Page 1</span>
+      <button id="nextPageBtn" onclick="changePage(1)">Next</button>
+    </div>
+  </div>
+
+  <!-- Add Period Modal -->
+  <div id="addPeriodModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Add Period</h2>
+
+      <label>Date:</label>
+      <input type="date" id="newPeriodDate">
+
+      <label>Start Time:</label>
+      <input type="time" id="newPeriodStartTime">
+
+      <label>End Time:</label>
+      <input type="time" id="newPeriodEndTime">
+
+      <label>Instructor:</label>
+      <select id="instructorSelect"></select>
+
+      <input type="hidden" id="hiddenBatchId">
+
+      <label for="topicSelect">Topic</label>
+      <select id="topicSelect">
+        <option value="">-- Select Topic --</option>
+      </select>
+
+      <div class="modal-actions">
+        <button onclick="submitNewPeriod()">Submit</button>
+        <button onclick="closeAddPeriodModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Period Modal -->
+  <div id="editPeriodModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Edit Period</h2>
+
+      <input type="hidden" id="editPeriodId">
+
+      <label>Date:</label>
+      <input type="date" id="editPeriodDate">
+
+      <label>Start Time:</label>
+      <input type="time" id="editPeriodStartTime">
+
+      <label>End Time:</label>
+      <input type="time" id="editPeriodEndTime">
+
+      <label>Instructor:</label>
+      <select id="editInstructorSelect"></select>
+
+      <div class="modal-actions">
+        <button onclick="savePeriodEdit()">Save</button>
+        <button onclick="closeEditPeriodModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="periods-in-batch.js"></script>
+</body>
+</html>

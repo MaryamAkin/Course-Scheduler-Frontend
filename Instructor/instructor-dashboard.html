@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Dashboard</title>
+    <link rel="stylesheet" href="instructor-dashboard.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2><i class="fa-solid fa-chalkboard-user"></i> Instructor</h2>
+            <nav>
+                <ul>
+                    <li><a href="/Instructor/my-details.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+                    <li><a href="/Instructor/upcoming-classes.html"><i class="fa-solid fa-calendar-days"></i> Upcoming Classes</a></li>
+                    <li><a href="/Instructor/my-topics.html"><i class="fa-solid fa-book"></i> Assigned Topics</a></li>
+                    <li><a href="#"><i class="fa-solid fa-users"></i> Students</a></li>
+                    <li><button id="logoutBtn" style="background:none; border:none; color:inherit; cursor:pointer;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h1 id="instructorName">Instructor Name</h1>
+
+                <div class="header-icons">
+                    <!-- Notification Bell -->
+                    <!-- Notification Bell with Dropdown -->
+                    <a href="#" class="notification-icon" id="notificationBell" aria-haspopup="true" aria-expanded="false" aria-label="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                        <!-- Dropdown container -->
+                        <div class="notification-dropdown" id="notificationDropdown" role="menu" aria-hidden="true">
+                            <ul id="notificationList">
+                                <!-- Notifications will be inserted here -->
+                            </ul>
+                            <div class="no-notifications" style="display:none;">No notifications</div>
+                        </div>
+                    </a>
+                    <!-- Instructor Image -->
+                    <a href="/Instructor/my-details.html" class="instructor-profile">
+                        <img id="instructorPhoto" src="https://via.placeholder.com/100" alt="Instructor Photo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <button id="quickActionsToggle" class="quick-btn">Quick Actions ▼</button>
+
+<!-- Quick Actions section starts hidden -->
+            <section class="quick-actions" id="quickActionsSection" style="display:none;">
+                <!-- <h2>Quick Actions</h2> -->
+                <div class="action-buttons">
+                    <a href="#" class="action-btn"><i class="fa-solid fa-video"></i> Create Virtual Class</a>
+                    <a href="#" class="action-btn"><i class="fa-solid fa-layer-group"></i> List of Batches</a>
+                </div>
+            </section>
+
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Total Topics</h3>
+                    <p id="totalTopics">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Classes This Week</h3>
+                    <p id="classesThisWeek">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Batches</h3>
+                    <p id="totalStudents">0</p>
+                </div>
+            </div>
+
+            <!-- Upcoming Classes -->
+            <section class="table-section">
+                <h2>Upcoming Classes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Topic</th>
+                            <th>Batch</th>
+                        </tr>
+                    </thead>
+                    <tbody id="classesTableBody">
+                        <!-- JS will insert rows here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="instructor-dashboard.js"></script>
+</body>
+</html>

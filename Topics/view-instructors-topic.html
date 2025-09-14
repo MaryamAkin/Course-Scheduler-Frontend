@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instructors in Topic</title>
+  <link rel="stylesheet" href="view-instructor-topic.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+      <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+      <li><a href="/Courses/courses.html">📘 Courses</a></li>
+      <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+      <li><a href="#">👨‍🏫 Instructors</a></li>
+      <li><a href="#">👩‍🎓 Students</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h1>Instructors Assigned to Topic</h1>
+    <button id="assignInstructorBtn">➕ Assign Instructor</button>
+    <table id="instructorsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="assignModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Assign Instructor</h2>
+      <select id="instructorSelect"></select>
+      <button id="assignBtn">Assign</button>
+    </div>
+  </div>
+
+  <script src="view-instructor-topic.js"></script>
+</body>
+</html>

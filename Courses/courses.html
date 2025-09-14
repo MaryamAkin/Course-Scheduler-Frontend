@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Courses</title>
+  <link rel="stylesheet" href="courses.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+      <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+      <li><a href="/Courses/courses.html">📘 Courses</a></li>
+      <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+      <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+      <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h1>Manage Courses</h1>
+    <div class="actions">
+      <button onclick="openAddModal()">Add Course</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="courseTableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="courseModal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">×</span>
+      <h2 id="modalTitle">Add Course</h2>
+      <form id="courseForm">
+        <input type="hidden" id="courseId" />
+        <label for="courseTitle">Course Title:</label>
+        <input type="text" id="courseTitle" required />
+
+        <div id="batchCheckboxes" class="batch-list">
+          <p>Select Batches:</p>
+          <!-- Dynamically loaded checkboxes will appear here -->
+        </div>
+
+        <br/>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="courses.js"></script>
+</body>
+</html>

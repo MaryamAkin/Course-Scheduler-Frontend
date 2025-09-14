@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #e6f0ff;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;   /* 🔹 Fix the sidebar */
+  top: 0;
+  left: 0;
+  overflow-y: auto;  /* 🔹 Scroll if content is long */
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 14px 0;
+}
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* 🔹 On hover → look like a button */
+.sidebar a:hover {
+  background-color: #2563eb;
+  padding: 10px 14px; /* Slightly bigger on hover */
+  cursor: pointer;
+}
+
+
+/* .main-content {
+  flex: 1;
+  padding: 20px;
+} */
+
+h1 {
+  color: #1e3a8a;
+}
+
+.actions {
+  margin: 15px 0;
+}
+
+button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
+}
+
+.modal-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}

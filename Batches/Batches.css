@@ -1,0 +1,143 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4ff;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #1E3A8A;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 12px;
+}
+
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.sidebar a:hover {
+  background-color: #2563eb;
+}
+
+.main-content {
+  margin-left: 240px;
+  padding: 20px;
+  flex: 1;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  color: #2563eb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: #2563eb;
+  color: white;
+}
+
+tr:hover {
+  background-color: #eef4ff;
+}
+
+button,
+a.button-link {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover,
+a.button-link:hover {
+  background-color: #1e40af;
+}
+
+.modal {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9fafb;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #1E3A8A;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}

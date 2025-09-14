@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unscheduled Topics</title>
+    <link rel="stylesheet" href="unscheduledTopic.css">
+</head>
+<body>
+    <!-- Button to trigger popup -->
+    <div class="main-container">
+        <button id="viewUnscheduledBtn" class="btn-primary">
+            View Unscheduled Topics
+        </button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="unscheduledModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Unscheduled Topics</h2>
+                <span class="close">&times;</span>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Batch Selection -->
+                <div class="form-group">
+                    <label for="batchSelect">Select Batch:</label>
+                    <select id="batchSelect" class="form-control">
+                        <option value="">Loading batches...</option>
+                    </select>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loadingState" class="loading-state" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Loading unscheduled topics...</p>
+                </div>
+
+                <!-- Unscheduled Topics List -->
+                <div id="unscheduledList" class="topics-container" style="display: none;">
+                    <h3>Unscheduled Topics:</h3>
+                    <div id="topicsContent"></div>
+                </div>
+
+                <!-- No Topics Message -->
+                <div id="noTopicsMessage" class="no-topics" style="display: none;">
+                    <div class="success-icon">✅</div>
+                    <h3>All Topics Scheduled!</h3>
+                    <p>Great news! All topics for this batch have been successfully scheduled.</p>
+                </div>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="error-message" style="display: none;">
+                    <div class="error-icon">❌</div>
+                    <h3>Error Loading Topics</h3>
+                    <p id="errorText">Something went wrong. Please try again.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="unscheduledTopic.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Prerequisites</title>
+  <link rel="stylesheet" href="Prerequisites-in-topic.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    
+    <ul>
+      <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+      <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+      <li><a href="/Courses/courses.html">📘 Courses</a></li>
+      <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+      <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+      <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+    </ul>
+  </div>
+
+  <main class="container">
+    <h1 id="pageTitle">Manage Prerequisites</h1>
+
+    <div class="add-section">
+      <label for="prerequisiteSelect">Add Prerequisite:</label>
+      <select id="prerequisiteSelect"></select>
+      <button id="addPrerequisiteBtn">Add</button>
+    </div>
+    <h2 id="topicTitleDisplay" class="text-xl font-bold mb-4 text-blue-900"></h2>
+    <h2>Current Prerequisites</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="prerequisiteTableBody"></tbody>
+    </table>
+  </main>
+
+  <script src="Prerequisites-in-topic.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Profile</title>
+    <link rel="stylesheet" href="instructor-profile.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+                <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+                <li><a href="/Courses/courses.html">📘 Courses</a></li>
+                <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+                <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+                <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1>Instructor Profile</h1>
+
+            <div class="profile-card">
+                <img id="instructorImage" src="https://via.placeholder.com/150" alt="Instructor Photo">
+                <div class="profile-info">
+                    <h2 id="instructorName">Loading...</h2>
+                    <p><strong>Email:</strong> <span id="instructorEmail"></span></p>
+                    <p><strong>Gender:</strong> <span id="instructorGender"></span></p>
+                    <p><strong>Phone Number:</strong> <span id="instructorPhone"></span></p>
+                    <a id="availabilityLink" class="btn" href="#">📅 View Availability</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="instructor-profile.js"></script>
+</body>
+</html>

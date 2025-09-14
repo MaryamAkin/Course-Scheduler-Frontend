@@ -1,0 +1,135 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f8ff; /* Very light blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem; /* Added padding for smaller screens */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.create-card {
+    background: #fff;
+    padding: 2rem 1.2rem; /* Reduced horizontal padding */
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 174, 239, 0.3); /* Blue shadow */
+    width: 100%;
+    max-width: 400px; /* Shrinks to fit small devices */
+    text-align: center;
+    border-top: 5px solid #00AEEF; /* Blue top accent */
+    overflow-wrap: break-word; /* Prevent long text overflow */
+}
+
+.create-card h1 {
+    margin-bottom: 1rem;
+    color: #00AEEF; /* Main blue */
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.create-card p.subtitle {
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #00AEEF;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+    background: #f9f9f9;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border: 2px solid #007bbf; /* Darker blue on focus */
+}
+
+.btn-primary {
+    width: 100%;
+    background: #00AEEF;
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #007bbf; /* Darker shade on hover */
+}
+
+.signup-text {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.signup-text a {
+    color: #00AEEF;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* 🔥 Force everything to stay inside screen */
+@media (max-width: 400px) {
+    .create-card {
+        padding: 1.5rem 1rem; /* Reduce padding more */
+    }
+
+    .create-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .input-group input,
+    .input-group select {
+        font-size: 0.95rem;
+        padding: 0.6rem;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+}

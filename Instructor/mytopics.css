@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background-color: #1e3a8a; /* Blue */
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+}
+.sidebar h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    background-color: #1e3a8a; /* deep blue */
+    padding: 15px 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar h2 i {
+    font-size: 1.2rem;
+    color: #ffcc00; /* golden accent for icon */
+}
+
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 20px;
+}
+
+.sidebar ul li a,
+.sidebar ul li button {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+.sidebar ul li i
+{
+    color: #ffcc00;
+}
+.sidebar ul li:hover,
+.sidebar ul li.active {
+    background-color: #2563eb; /* Lighter blue */
+}
+
+.sidebar i {
+    margin-right: 8px;
+}
+
+/* Main Content */
+.content {
+    margin-left: 240px;
+    padding: 20px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background-color: #2563eb;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f3f4f6;
+}

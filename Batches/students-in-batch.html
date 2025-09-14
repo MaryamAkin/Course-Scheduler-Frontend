@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Students in Batch</title>
+  <link rel="stylesheet" href="students-in-batch.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+      <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+      <li><a href="/Courses/courses.html">📘 Courses</a></li>
+      <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+      <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+      <li><a href="/Admin/all-students.html">👩‍🎓 Students</a></li>
+      <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h1>Students in Batch</h1>
+    <div class="actions">
+      <button id="addStudentBtn">Add Student</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Phone Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentsTableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="studentModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="closeModal">&times;</span>
+      <h2 id="modalTitle">Add Student</h2>
+      <form id="studentForm" enctype="multipart/form-data">
+        <input type="hidden" id="studentId" />
+
+        <label for="studentName">Full Name:</label>
+        <input type="text" id="studentName" name="FullName" required />
+
+        <label for="studentEmail">Email:</label>
+        <input type="email" id="studentEmail" name="Email" required />
+
+        <label for="studentGender">Gender:</label>
+        <select id="studentGender" name="Gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <div id="phoneFieldWrapper">
+          <label>Phone Number:</label>
+          <input type="text" id="studentPhone" />
+        </div>
+
+        <div id="passwordFieldWrapper">
+          <label>Password:</label>
+          <input type="password" id="studentPassword"/>
+        </div>
+
+        <label for="studentImage">Profile Image:</label>
+        <input type="file" id="studentImage" name="ProfileImageUrl" accept="image/*" />
+
+        <button type="submit" id="saveStudentBtn">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="students-in-batch.js"></script>
+</body>
+</html>

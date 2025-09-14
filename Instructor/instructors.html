@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructors</title>
+    <link rel="stylesheet" href="instructors.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+            <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+            <li><a href="/Courses/courses.html">📘 Courses</a></li>
+            <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+            <li><a href="/Instructors/instructors.html" class="active">👨‍🏫 Instructors</a></li>
+            <li><a href="/Admin/all-students.html">👩‍🎓 Students</a></li>
+            <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="header">
+            <h1>Instructors</h1>
+            <button id="addInstructorBtn">➕ Add Instructor</button>
+        </div>
+
+        <table id="instructorsTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic Content -->
+            </tbody>
+        </table>
+    </main>
+</div>
+
+<!-- Add Instructor Modal -->
+<div id="addInstructorModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Instructor</h2>
+        <form id="addInstructorForm">
+            <label>Email:</label>
+            <input type="email" id="email" required>
+
+            <label>Full Name:</label>
+            <input type="text" id="fullName" required>
+
+            <label>Gender:</label>
+            <select id="gender" required>
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label>Phone Number:</label>
+            <input type="text" id="phoneNumber" required>
+
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</div>
+
+<script src="instructors.js"></script>
+</body>
+</html>

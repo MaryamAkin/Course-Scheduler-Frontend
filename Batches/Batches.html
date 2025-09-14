@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Batch Management</title>
+  <link rel="stylesheet" href="Batches.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+      <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+      <li><a href="/Courses/courses.html">📘 Courses</a></li>
+      <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+      <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+      <li><a href="/Admin/all-students.html">👩‍🎓 Students</a></li>
+      <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="container">
+      <h1>Batch Management</h1>
+
+      <!-- Batches List Section -->
+      <div id="batch-list-section">
+        <h2>Batches</h2>
+        <button id="addBatchBtn">Add Batch</button>
+        <table id="batch-table">
+          <thead>
+            <tr>
+              <th>Batch Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="batchTableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Periods Section -->
+      <div id="periodsSection" class="hidden">
+        <h2>Upcoming Periods for <span id="selectedBatchName"></span></h2>
+        <button id="addPeriodBtn">Add Period</button>
+        <button id="generateScheduleBtn">Generate Schedule</button>
+        <button id="viewStudentsBtn">View Students</button>
+        <table id="periods-table">
+          <thead>
+            <tr>
+              <th>Instructor</th>
+              <th>Topic</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+            </tr>
+          </thead>
+          <tbody id="periodsTableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Add Period Modal -->
+      <div id="addPeriodForm" class="modal hidden">
+        <h3>Add Period</h3>
+        <label>Instructor:
+          <select id="instructorSelect"></select>
+        </label>
+        <label>Date: <input type="date" id="periodDate" /></label>
+        <label>Start Time: <input type="time" id="startTime" /></label>
+        <label>End Time: <input type="time" id="endTime" /></label>
+        <button id="submitPeriodBtn">Submit</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+
+      <!-- Add Batch Modal -->
+      <div id="addBatchModal" class="modal hidden">
+        <h3>Add New Batch</h3>
+        <label>Batch Name:
+          <input type="text" id="newBatchName" />
+        </label>
+        <label>Year:
+          <input type="number" id="newBatchYear" min="2000" max="2100" />
+        </label>
+        <label>Course:
+          <select id="courseSelect">
+            <option value="">-- Select Course --</option>
+          </select>
+        </label>
+        <button onclick="submitNewBatch()">Add</button>
+        <button onclick="closeAddBatchModal()">Cancel</button>
+      </div>
+
+      <!-- Edit Batch Modal -->
+      <div id="editModal" class="modal hidden">
+        <h3>Edit Batch</h3>
+        <input type="hidden" id="editBatchId" />
+        <label>Batch Name: <input type="text" id="editBatchName" /></label>
+        <button onclick="saveBatchEdit()">Save</button>
+        <button onclick="closeEditModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Batches.js"></script>
+</body>
+</html>

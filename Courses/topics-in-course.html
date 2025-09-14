@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Topics Management</title>
+  <link rel="stylesheet" href="topics-in-course.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="main-container">
+    <aside class="sidebar">
+      <h2>Admin Dashboard</h2>
+      <ul>
+        <li><a href="/Admin/admin-dashboard.html">📊 Dashboard</a></li>
+        <li><a href="/Batches/Batches.html">📁 Batches</a></li>
+        <li><a href="/Courses/courses.html">📘 Courses</a></li>
+        <li><a href="/Topics/topics.html">🧩 Topics</a></li>
+        <li><a href="/Instructor/instructors.html">👨‍🏫 Instructors</a></li>
+        <li><button id="logoutBtn" class="logout-btn">🚪 Logout</button></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <div class="container">
+        <h2>Topics</h2>
+        <div class="toolbar">
+          <input type="text" id="searchInput" placeholder="Search topic title..." />
+          <button id="addTopicBtn">Add Topic</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Course</th>
+              <th>Duration</th>
+              <th>Instructors</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="topicsTableBody"></tbody>
+        </table>
+
+        <div class="pagination">
+          <button id="prevPage">⬅ Prev</button>
+          <span id="pageInfo"></span>
+          <button id="nextPage">Next ➡</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="topicModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3 id="modalTitle">Add Topic</h3>
+      <form id="topicForm">
+        <input type="hidden" id="topicId" />
+        <label>Title</label>
+        <input type="text" id="topicTitle" required />
+        <label>Course</label>
+        <select id="topicCourseId" required></select>
+        <label>Duration (hrs)</label>
+        <input type="number" id="topicDuration" required min="1" />
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="topics-in-course.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9fbff;
+  margin: 0;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+.logout-btn {
+  background-color: #1e3a8a;  /* deep blue background */
+  color: white;              /* white text */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #153075; /* darker blue on hover */
+}
+
+form input, form select {
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+#topicsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+#topicsTable th, #topicsTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+#pagination {
+  margin-top: 10px;
+}
+
+#pagination button {
+  margin-right: 5px;
+}

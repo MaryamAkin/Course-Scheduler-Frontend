@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Topics</title>
+  <link rel="stylesheet" href="topics.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="/Student/student-dashboard.html">🏠 Dashboard</a></li>
+        <li><a href="/Student/courses.html">📚 My Courses</a></li>
+        <li><a href="/Student/schedule.html">📅 Schedule</a></li>
+        <li><a href="/Student/profile.html">👤 Profile</a></li>
+        <li><a href="#" id="logoutBtn">🚪 Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <h1 id="courseTitleHeader">Topics</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Duration</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="topicsTableBody">
+          <!-- Topics go here -->
+        </tbody>
+      </table>
+
+      <!-- Pagination -->
+      <div class="pagination" id="paginationControls"></div>
+    </main>
+  </div>
+
+  <script src="topics.js"></script>
+</body>
+</html>
