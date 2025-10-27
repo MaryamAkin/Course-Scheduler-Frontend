@@ -19,7 +19,7 @@ function addCourse(event) {
     if (result.isConfirmed) {
       const title = result.value.trim();
 
-      fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/add-course", {
+      fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/add-course", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

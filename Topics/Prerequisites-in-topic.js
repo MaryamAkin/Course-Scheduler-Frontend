@@ -1,4 +1,4 @@
-const apiUrl = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic";
+const apiUrl = "https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic";
 const topicId = new URLSearchParams(window.location.search).get("topicId");
 // const courseId = new URLSearchParams(window.location.search).get("courseId");
 console.log( "topic id",topicId);

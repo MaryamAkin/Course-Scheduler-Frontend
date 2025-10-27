@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     // 🌐 Define API endpoints here so you can edit them easily
     // const API_BASE_URL = "https://your-backend-api.com"; 
-    const BATCHES_ENDPOINT = `course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/all-batches`;
-    const CREATE_ACCOUNT_ENDPOINT = `course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students`;
+    const BATCHES_ENDPOINT = `https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/all-batches`;
+    const CREATE_ACCOUNT_ENDPOINT = `https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students`;
 
     const batchSelect = document.getElementById("batchSelect");
 

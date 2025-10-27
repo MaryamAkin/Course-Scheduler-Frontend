@@ -1,4 +1,4 @@
-const baseUrl = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/"
+const baseUrl = "https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/"
 const params = new URLSearchParams(window.location.search);
 
 // Check if token came from the URL (after Google login)
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 // Load instructor name & photo
 async function loadInstructorInfo() {
     const token = localStorage.getItem("authToken");
-    const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/profile-currentuser`, {
+    const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/profile-currentuser`, {
         headers: { "Authorization": `Bearer ${token}` }
     });
 
@@ -50,7 +50,7 @@ async function loadInstructorInfo() {
 // Load dashboard stats
 async function loadStats() {
     const token = localStorage.getItem("authToken");
-    const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructor-stats`, {
+    const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructor-stats`, {
         headers: { "Authorization": `Bearer ${token}` }
     });
 
@@ -68,7 +68,7 @@ async function loadStats() {
 // Load upcoming classes table
 async function loadUpcomingClasses() {
     const token = localStorage.getItem("authToken");
-    const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/instructor-upcoming`, {
+    const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/instructor-upcoming`, {
         headers: { "Authorization": `Bearer ${token}` }
     });
 
@@ -108,7 +108,7 @@ async function loadUpcomingClasses() {
 // NEW: Load notifications count
 async function loadNotifications() {
     const token = localStorage.getItem("authToken");
-    const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Admin/my-notifications`, {
+    const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Admin/my-notifications`, {
         headers: { "Authorization": `Bearer ${token}` }
     });
 

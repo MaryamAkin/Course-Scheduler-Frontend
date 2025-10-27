@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("ProfileImage", profileImage.files[0]);
       }
 
-      const response = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/${studentId}`, {
+      const response = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/${studentId}`, {
         method: "PUT",
         body: formData
       });
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       formData.append("Password", password);
       formData.append("ProfileImageUrl", profileImage.files[0]);
 
-      const response = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students`, {
+      const response = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students`, {
         method: "POST",
         body: formData
       });
@@ -103,7 +103,7 @@ function closeModal() {
 }
 
 async function fetchStudents(batchId) {
-  const response = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/Students/${batchId}`);
+  const response = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/Students/${batchId}`);
   const result = await response.json();
   const tbody = document.getElementById("studentsTableBody");
   tbody.innerHTML = "";
@@ -136,7 +136,7 @@ async function removeStudent(id) {
   });
 
   if (confirm.isConfirmed) {
-    const response = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/${id}`, {
+    const response = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/${id}`, {
       method: "DELETE"
     });
 

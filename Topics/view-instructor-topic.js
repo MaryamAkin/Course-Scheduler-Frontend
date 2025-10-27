@@ -14,7 +14,7 @@ console.log(topicId);
 
   async function loadInstructors() {
     try {
-const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/instructors-assigned/${topicId}`);
+const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/instructors-assigned/${topicId}`);
       const result = await res.json();
       const tbody = document.querySelector("#instructorsTable tbody");
       tbody.innerHTML = "";
@@ -70,7 +70,7 @@ const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azur
     select.innerHTML = "";
 
     try {
-      const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructors");
+      const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructors");
       const result = await res.json();
         const instructors = result.data || [];
       instructors.forEach(instr => {
@@ -94,7 +94,7 @@ const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azur
 // console.log('instructorid', instructorId)
     try {
       console.log("topicid",topicId, "instructor id",instructorId);
-      const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assign-instructors`, {
+      const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assign-instructors`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

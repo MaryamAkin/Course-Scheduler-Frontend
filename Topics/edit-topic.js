@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchCourses() {
   try {
-    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/all-courses");
+    const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/all-courses");
     const result = await res.json();
     const courses = result.data || [];
     const courseSelect = document.getElementById("courseSelect");
@@ -29,7 +29,7 @@ async function fetchCourses() {
 
 async function fetchTopicDetails(topicId) {
   try {
-    const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/${topicId}`);
+    const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/${topicId}`);
     if (!res.ok) throw new Error("Topic not found");
     const topic = await res.json();
     const result = topic.data || [];
@@ -53,7 +53,7 @@ async function updateTopic(topicId) {
   }
 
   try {
-    const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/${topicId}`, {
+    const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/${topicId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, duration, courseId })

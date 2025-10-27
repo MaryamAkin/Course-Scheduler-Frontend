@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 500);
 
-  fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Scheduler/schedule/${batchId}`, { method: "POST" })
+  fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Scheduler/schedule/${batchId}`, { method: "POST" })
     .then(res => res.json())
     .then(response => {
       clearInterval(interval);
@@ -127,7 +127,7 @@ function loadPeriods(batchId, page = 1) {
   const tbody = document.getElementById("periodsTableBody");
   tbody.innerHTML = "";
 
-  fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/${batchId}?CurrentPage=${page}&PageSize=${pageSize}`)
+  fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/${batchId}?CurrentPage=${page}&PageSize=${pageSize}`)
     .then(res => res.json())
     .then(data => {
       const periods = data.data.items || [];
@@ -197,7 +197,7 @@ function renderPagination(batchId, page, totalPages) {
 
 // -------------------- Supporting Functions --------------------
 function loadTopics(batchId) {
-  fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/Topics/${batchId}`)
+  fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/Topics/${batchId}`)
     .then(res => res.json())
     .then(topics => {
       const top = topics.data || [];
@@ -216,7 +216,7 @@ function loadTopics(batchId) {
 }
 
 function loadInstructors() {
-  fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructors")
+  fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructors")
     .then(res => res.json())
     .then(instructors => {
       const select1 = document.getElementById("instructorSelect");
@@ -255,7 +255,7 @@ function submitNewPeriod() {
     batchId: batchId
   };
 
-  fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods", {
+  fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
@@ -273,7 +273,7 @@ function submitNewPeriod() {
 }
 
 function editPeriod(id) {
-  fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/${id}`)
+  fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/${id}`)
     .then(res => res.json())
     .then(period => {
       document.getElementById("editPeriodId").value = id;
@@ -298,7 +298,7 @@ function savePeriodEdit() {
     instructorId: document.getElementById("editInstructorSelect").value
   };
 
-  fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/${id}`, {
+  fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
@@ -330,7 +330,7 @@ function deletePeriod(id) {
     confirmButtonText: "Yes, delete it!"
   }).then(result => {
     if (result.isConfirmed) {
-      fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/${id}`, {
+      fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/${id}`, {
         method: "DELETE"
       })
         .then(res => {

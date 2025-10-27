@@ -7,7 +7,7 @@ const form = document.getElementById("addInstructorForm");
 // Fetch and display instructors
 async function loadInstructors() {
     try {
-        const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructors");
+        const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructors");
         const result = await res.json();
 
         tableBody.innerHTML = "";
@@ -46,7 +46,7 @@ form.addEventListener("submit", async (e) => {
     };
 
     try {
-        const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors", {
+        const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
@@ -83,7 +83,7 @@ async function removeInstructor(id) {
 
     if (confirm.isConfirmed) {
         try {
-            const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructor/${id}`, {
+            const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructor/${id}`, {
                 method: "DELETE"
             });
             if (res.ok) {

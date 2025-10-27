@@ -1,5 +1,5 @@
 const topicId = new URLSearchParams(window.location.search).get("topicId");
-const apiUrl = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic";
+const apiUrl = "https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic";
 
 document.addEventListener("DOMContentLoaded", () => {
     if (!topicId) {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadInstructors() {
     try {
-        const response = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/instructors-assigned/${topicId}`);
+        const response = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/instructors-assigned/${topicId}`);
         if (!response.ok) throw new Error("Failed to load instructors.");
         const instructors = await response.json();
         const instructorList = instructors.data || [];
@@ -101,7 +101,7 @@ async function removeInstructor(instructorId) {
     }).then(async (result) => {
         if (result.isConfirmed) {
             try {
-                const response = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/${topicId}/RemoveInstructor/${instructorId}`, {
+                const response = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/${topicId}/RemoveInstructor/${instructorId}`, {
                     method: "DELETE",
                 });
                 if (!response.ok) throw new Error("Failed to remove instructor.");
@@ -144,7 +144,7 @@ function setupModalEvents() {
 }
 async function loadAvailableInstructors() {
     try {
-        const response = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructors`);
+        const response = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructors`);
         if (!response.ok) throw new Error("Failed to fetch instructors.");
         const result = await response.json();
         const instructors = result.data || [];
@@ -184,7 +184,7 @@ async function assignInstructor() {
     }
 
     try {
-        const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assign-instructors`, {
+        const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assign-instructors`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

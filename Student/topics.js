@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function loadTopics() {
     try {
-      const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/course/${courseId}`, {
+      const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/course/${courseId}`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("authToken")}` }
       });
       if (!res.ok) throw new Error("Failed to load topics");

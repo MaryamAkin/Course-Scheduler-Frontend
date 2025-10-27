@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextPageBtn = document.getElementById("nextPage");
 
     // Fetch all classes from API
-    fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/instructor-periods?CurrentPage=1&PageSize=10", {
+    fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/instructor-periods?CurrentPage=1&PageSize=10", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

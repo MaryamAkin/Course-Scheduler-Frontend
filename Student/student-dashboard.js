@@ -19,7 +19,7 @@ if (tokenFromUrl) {
   }
 }
 
-const baseUrl = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/"; 
+const baseUrl = "https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/"; 
 // DOM refs
 const studentNameEl = document.getElementById("studentName");
 const studentEmailEl = document.getElementById("studentEmail");
@@ -60,7 +60,7 @@ document.getElementById("toggleQuickActions").addEventListener("click", () => {
 document.getElementById("quickJoin").addEventListener("click", async () => {
   // attempt to join the next class if a link exists
   try {
-    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Schedules/next-for-student", {
+    const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Schedules/next-for-student", {
       headers: { "Authorization": `Bearer ${localStorage.getItem("authToken")}` }
     });
     if (!res.ok) throw new Error("No upcoming class");
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function checkProfile() {
-    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/me", {
+    const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/me", {
         headers: { "Authorization": `Bearer ${localStorage.getItem("authToken")}` }
     });
 
@@ -152,7 +152,7 @@ async function checkProfile() {
 }
 
 async function loadBatches() {
-    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/all-batches", {
+    const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/all-batches", {
         headers: { "Authorization": `Bearer ${localStorage.getItem("authToken")}` }
     });
     const batches = await res.json();
@@ -175,7 +175,7 @@ document.getElementById("saveBatchBtn").addEventListener("click", async () => {
         return;
     }
 
-    await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/update-batch", {
+    await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/update-batch", {
         method: "PUT",
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("authToken"),
@@ -193,7 +193,7 @@ document.getElementById("saveBatchBtn").addEventListener("click", async () => {
 
 async function loadProfile() {
   try {
-    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/profile-currentuser", {
+    const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/profile-currentuser", {
       headers: { "Authorization": `Bearer ${localStorage.getItem("authToken")}` }
     });
     if (!res.ok) throw new Error("Failed to load profile");
@@ -212,7 +212,7 @@ async function loadProfile() {
 
 async function loadStats() {
   try {
-    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/student-stats", {
+    const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/student-stats", {
       headers: { "Authorization": `Bearer ${localStorage.getItem("authToken")}` }
     });
     if (!res.ok) throw new Error("Failed to load stats");
@@ -229,7 +229,7 @@ async function loadStats() {
 
 async function loadUpcoming() {
   try {
-    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/student-upcoming", {
+    const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/student-upcoming", {
       headers: { 
         "Authorization": `Bearer ${localStorage.getItem("authToken")}`,
         "Content-Type": "application/json"
@@ -287,7 +287,7 @@ async function loadUpcoming() {
 
 async function loadCourses() {
   try {
-    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/student-course", {
+    const res = await fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/student-course", {
       headers: { "Authorization": `Bearer ${localStorage.getItem("authToken")}` }
     });
     if (!res.ok) throw new Error("Failed to load courses");
@@ -361,7 +361,7 @@ function loadCalendar() {
 
     // ✅ Connect Google Calendar
     connectBtn.addEventListener("click", () => {
-        window.location.href = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Auth/google-login";
+        window.location.href = "https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Auth/google-login";
     });
 }
 document.getElementById("logoutBtn").addEventListener("click", function (e) {

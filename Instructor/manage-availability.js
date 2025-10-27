@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let instructorId = getUserIdFromToken();
     // === Load Availabilities ===
     function loadAvailabilities() {
-        fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Availability/my-availabilities", {
+        fetch("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Availability/my-availabilities", {
             headers: { "Authorization": `Bearer ${authToken}` }
         })
         .then(res => res.json())
@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const payload = {instructorId,dayOfWeek, startTime, endTime };
 
             const url = isEdit 
-                ? `course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Availability/${slot.id}/update`
-                : `course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Availability`;
+                ? `https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Availability/${slot.id}/update`
+                : `https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Availability`;
 
             fetch(url, {
                 method: isEdit ? "PUT" : "POST",
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target.classList.contains("delete-btn")) {
             const id = e.target.dataset.id;
             if (confirm("Are you sure you want to delete this availability?")) {
-                fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Availability/${id}/delete`, {
+                fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Availability/${id}/delete`, {
                     method: "DELETE",
                     headers: { "Authorization": `Bearer ${authToken}` }
                 })

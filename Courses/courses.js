@@ -1,4 +1,4 @@
-const apiBaseUrl = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api";
+const apiBaseUrl = "https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadCourses();

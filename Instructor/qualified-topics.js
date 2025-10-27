@@ -7,7 +7,7 @@ if (!instructorId) {
 
 async function loadQualifiedTopics() {
     try {
-        const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assigned-toinstructors/${instructorId}`);
+        const res = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assigned-toinstructors/${instructorId}`);
         const result = await res.json();
 
         topicsTableBody.innerHTML = "";
@@ -36,11 +36,11 @@ async function loadQualifiedTopics() {
 async function openAssignModal() {
     try {
         // Fetch all topics
-        const topicsRes = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/all-topics`);
+        const topicsRes = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/all-topics`);
         const topicsData = await topicsRes.json();
         const topics = topicsData.data || [];
         // Fetch instructor's current qualified topics
-        const qualifiedRes = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assigned-toinstructors/${instructorId}`);
+        const qualifiedRes = await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assigned-toinstructors/${instructorId}`);
         const qualifiedData = await qualifiedRes.json();
         const result = qualifiedData.data || [];
         const qualifiedIds = result.map(t => t.id);
@@ -66,7 +66,7 @@ async function openAssignModal() {
         });
 
         if (selected && selected.length > 0) {
-            await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assign-topic`, {
+            await fetch(`https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assign-topic`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ instructorId, topicIds: selected })
