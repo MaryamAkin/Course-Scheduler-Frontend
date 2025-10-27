@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load batches from API
     async function loadBatches() {
         try {
-            const response = await fetch('https://localhost:7295/api/Batches/all-batches', {
+            const response = await fetch('course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/all-batches', {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('authToken')}`
                 }
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             // Call the unscheduled topics API
-            const response = await fetch(`https://localhost:7295/api/Topic/unscheduled/${batchId}`, {
+            const response = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/unscheduled/${batchId}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('authToken')}`

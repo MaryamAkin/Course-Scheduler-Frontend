@@ -1,5 +1,5 @@
-const apiUrl = "https://localhost:7295/api/Topic";
-const courseUrl = "https://localhost:7295/api/Courses/all-courses";
+const apiUrl = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic";
+const courseUrl = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/all-courses";
 
 // const res = await fetch(apiUrl);
 // const result = await res.json();

@@ -16,10 +16,10 @@ if (authToken) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetchData("https://localhost:7295/api/Students/count", "studentCount");
-  fetchData("https://localhost:7295/api/Instructors/count", "instructorCount");
-  fetchData("https://localhost:7295/api/Batches/count", "batchCount");
-  fetchData("https://localhost:7295/api/Courses/count", "courseCount");
+  fetchData("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/count", "studentCount");
+  fetchData("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/Instructors/count", "instructorCount");
+  fetchData("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/count", "batchCount");
+  fetchData("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/ api/Courses/count", "courseCount");
   loadRecentActivity()
   loadCalendar()
   loadUnassignedTopics()
@@ -67,7 +67,7 @@ async function loadRecentRegistrations() {
     list.innerHTML = "<li>Loading...</li>";
 
     try {
-        const res = await fetch("https://localhost:7295/api/Students/recent");
+        const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/recent");
         if (!res.ok) throw new Error("Failed to fetch");
         
         const data = await res.json();
@@ -97,7 +97,7 @@ async function loadNotifications() {
 
     try {
         const token = localStorage.getItem("authToken"); 
-        const res = await fetch("https://localhost:7295/api/Admin/my-notifications", {
+        const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Admin/my-notifications", {
             headers: {
                 "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
@@ -129,7 +129,7 @@ function loadCalendar() {
     const calendarFrame = document.getElementById("calendarFrame");
     const connectBtn = document.getElementById("connectCalendarBtn");
 
-    fetch("https://localhost:7295/api/calendar/my-calendar-id", {
+    fetch("https://localhost:7295course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/calendar/my-calendar-id", {
         headers: {
             "Authorization": `Bearer ${localStorage.getItem("authToken")}`
         }
@@ -152,7 +152,7 @@ function loadCalendar() {
 
     // ✅ Connect Google Calendar
     connectBtn.addEventListener("click", () => {
-        window.location.href = "https://localhost:7295/api/Auth/google-login";
+        window.location.href = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Auth/google-login";
     });
 }
 function addCourse(event) {
@@ -176,7 +176,7 @@ function addCourse(event) {
     if (result.isConfirmed) {
       const title = result.value.trim();
 
-      fetch("https://localhost:7295/api/Courses/add-course", {
+      fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/add-course", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -211,7 +211,7 @@ function addCourse(event) {
   });
 }
 function loadRecentActivity() {
-  fetch("https://localhost:7295/api/Activity/recent", {
+  fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Activity/recent", {
     headers: {
       "Authorization": `Bearer ${localStorage.getItem("authToken")}`
     }
@@ -261,7 +261,7 @@ function addCourse(event) {
     if (result.isConfirmed) {
       const title = result.value.trim();
 
-      fetch("https://localhost:7295/api/Courses/add-course", {
+      fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/add-course", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -315,7 +315,7 @@ function addTopic(event) {
   if (event) event.preventDefault();
 
   // Step 1: Load available courses first
-  fetch("https://localhost:7295/api/Courses/all-courses", {
+  fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/all-courses", {
     headers: {
       "Authorization": `Bearer ${localStorage.getItem("authToken")}`
     }
@@ -374,7 +374,7 @@ function addTopic(event) {
         const { courseId, courseTitle, title, duration } = result.value;
 
         // Step 4: Send to backend
-        fetch("https://localhost:7295/api/Topic", {
+        fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -429,7 +429,7 @@ function addBatch(event) {
   if (event) event.preventDefault();
 
   // Step 1: Fetch courses first
-  fetch("https://localhost:7295/api/Courses/all-courses", {
+  fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/all-courses", {
     headers: {
       "Authorization": `Bearer ${localStorage.getItem("authToken")}`
     }
@@ -493,7 +493,7 @@ function addBatch(event) {
 
         console.log("Sending to backend:", payload);
         // Step 4: Send to backend
-        fetch("https://localhost:7295/api/Batches/add-batch", {
+        fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/add-batch", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -589,7 +589,7 @@ function addInstructor(event) {
 
       console.log("Sending to backend:", payload);
 
-      fetch("https://localhost:7295/api/Instructors", {
+      fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -635,7 +635,7 @@ function generateSchedule(event) {
   if (event) event.preventDefault();
 
   // Fetch all batches
-  fetch("https://localhost:7295/api/Batches/all-batches", {
+  fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/all-batches", {
     headers: {
       "Authorization": `Bearer ${localStorage.getItem("authToken")}`
     }
@@ -684,10 +684,10 @@ function generateSchedule(event) {
       if (result.isConfirmed) {
         const { batchId } = result.value;
 
-        console.log("Sending to backend:", { batchId });
+        // console.log("Sending to backend:", { batchId });
 
         // Call backend with only batchId
-        fetch(`https://localhost:7295/api/Scheduler/schedule/${batchId}`, {
+        fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Scheduler/schedule/${batchId}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -737,7 +737,6 @@ function generateSchedule(event) {
             showConfirmButton: true,
             confirmButtonText: 'OK'
           });
-
           // Optionally reload periods if you have this function
           if (typeof loadPeriods === 'function') {
             loadPeriods(batchId);
@@ -766,7 +765,7 @@ function generateSchedule(event) {
 
 
 function loadUnassignedTopics() {
-  fetch("https://localhost:7295/api/Topic/unassigned-topics", {
+  fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/unassigned-topics", {
     headers: {
       "Authorization": `Bearer ${localStorage.getItem("authToken")}`
     }
@@ -827,7 +826,7 @@ function loadUnassignedTopics() {
 
 function openAssignInstructorModal(topicId, topicTitle) {
   // Fetch instructors for dropdown
-  fetch("https://localhost:7295/api/Instructors/instructors", {
+  fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/instructors", {
     headers: {
       "Authorization": `Bearer ${localStorage.getItem("authToken")}`
     }
@@ -875,7 +874,7 @@ function openAssignInstructorModal(topicId, topicTitle) {
 }
 
 function assignInstructorToTopic(topicId, instructorId) {
-  fetch("https://localhost:7295/api/Topic/assign-instructors", {
+  fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assign-instructors", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

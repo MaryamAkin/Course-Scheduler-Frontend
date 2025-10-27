@@ -65,7 +65,7 @@ function loginValidation(email, password) {
   
   let login = async (loginData) => {
     try {
-      let res = await fetch("https://localhost:7295/api/Auth/app-login", {
+      let res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Auth/app-login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

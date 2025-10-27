@@ -22,7 +22,7 @@ async function loadPeriods() {
     const tableBody = document.querySelector("#periodsTable tbody");
 
     try {
-        const res = await fetch(`https://localhost:7295/api/Periods/student-periods?CurrentPage=${currentPage}&PageSize=${pageSize}`, {
+        const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Periods/student-periods?CurrentPage=${currentPage}&PageSize=${pageSize}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

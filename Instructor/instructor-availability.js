@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // === Load Instructor Availabilities ===
     function loadAvailabilities() {
-        fetch(`https://localhost:7295/api/Availability/${instructorId}`, {
+        fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Availability/${instructorId}`, {
             headers: {
                 "Authorization": `Bearer ${authToken}`
             }

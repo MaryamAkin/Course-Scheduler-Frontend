@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const fetchBatches = async () => {
   try {
-    const response = await fetch("https://localhost:7295/api/Batches/all-batches");
+    const response = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/all-batches");
     const batches = await response.json();
 
     const tableBody = document.getElementById("batchTableBody");
@@ -45,7 +45,7 @@ const removeBatch = async (batchId) => {
 
   if (confirm.isConfirmed) {
     try {
-      const res = await fetch(`https://localhost:7295/api/Batches/${batchId}`, {
+      const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/${batchId}`, {
         method: "DELETE"
       });
 
@@ -81,7 +81,7 @@ const saveBatchEdit = async () => {
   }
 
   try {
-    const res = await fetch(`https://localhost:7295/api/Batches/${id}`, {
+    const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -115,7 +115,7 @@ function closeAddBatchModal() {
 
 async function loadCourses() {
   try {
-    const res = await fetch("https://localhost:7295/api/Courses/all-courses");
+    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/all-courses");
     const courses = await res.json();
     const courseSelect = document.getElementById("courseSelect");
     const cour = courses.data || [];
@@ -143,7 +143,7 @@ async function submitNewBatch() {
   }
 
   try {
-    const res = await fetch("https://localhost:7295/api/Batches/add-batch", {
+    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/add-batch", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

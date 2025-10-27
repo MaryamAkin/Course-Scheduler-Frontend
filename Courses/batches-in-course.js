@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  fetch(`https://localhost:7295/api/Batches/${courseId}/instructors`, {
+  fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/${courseId}/instructors`, {
     headers: {
       "Authorization": "Bearer " + localStorage.getItem("authToken")
     }

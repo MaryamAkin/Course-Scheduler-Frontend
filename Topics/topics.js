@@ -25,7 +25,7 @@ const pageSize = 5;
 // Fetch courses
 async function fetchCourses() {
   try {
-    const res = await fetch("https://localhost:7295/api/Courses/all-courses");
+    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/all-courses");
     const courses = await res.json();
     const courseSelect = document.getElementById("courseSelect");
     const result = courses.data || [];
@@ -40,7 +40,7 @@ async function fetchCourses() {
 // Fetch topics
 async function fetchTopics() {
   try {
-    const res = await fetch("https://localhost:7295/api/Topic/all-topics");
+    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/all-topics");
     allTopics = await res.json();
     renderTopics();
   } catch (err) {
@@ -100,7 +100,7 @@ async function addTopic() {
   }
 
   try {
-    const res = await fetch("https://localhost:7295/api/Topic", {
+    const res = await fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, duration, courseId }),
@@ -138,7 +138,7 @@ async function removeTopic(topicId) {
   if (!result.isConfirmed) return;
 
   try {
-    const res = await fetch(`https://localhost:7295/api/Topic/${topicId}`, { method: "DELETE" });
+    const res = await fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/${topicId}`, { method: "DELETE" });
     if (res.ok) {
       Swal.fire("Deleted", "Topic deleted successfully.", "success");
       fetchTopics();

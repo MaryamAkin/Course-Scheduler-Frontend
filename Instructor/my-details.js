@@ -1,4 +1,4 @@
-const baseUrl = "https://localhost:7295/";
+const baseUrl = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/";
 const authToken = localStorage.getItem("authToken");
 
 const studentNameEl = document.getElementById("instructorName");

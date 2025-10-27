@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE_URL = 'https://localhost:7295/api/Distribution'; // Adjust to your API base URL
+const API_BASE_URL = 'course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Distribution'; 
 
 // Chart instances
 let distributionChart = null;

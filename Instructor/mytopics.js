@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
     }
 
-    fetch("https://localhost:7295/api/Topic/assigned-tome", {
+    fetch("course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Topic/assigned-tome", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

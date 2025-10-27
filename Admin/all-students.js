@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalPagesSpan = document.getElementById("totalPages");
   const searchInput = document.getElementById("searchInput");
 
-  const API_URL = "https://localhost:7295/api/Students"; 
-  const BATCH_API = "https://localhost:7295/api/Batches/all-batches";
+  const API_URL = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students"; 
+  const BATCH_API = "course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/all-batches";
 
   let students = [];
   let filteredStudents = [];

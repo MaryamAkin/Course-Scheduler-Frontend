@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
     console.log(instructorId);
-    fetch(`https://localhost:7295/api/Instructors/profile/${instructorId}`)
+    fetch(`course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/profile/${instructorId}`)
         .then(res => {
             if (!res.ok) throw new Error("Failed to fetch instructor details");
             return res.json();
