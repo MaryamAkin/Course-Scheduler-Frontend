@@ -15,6 +15,7 @@ if (authToken) {
     }
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
   fetchData("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/count", "studentCount");
   fetchData("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/count", "instructorCount");
@@ -26,11 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
   loadRecentRegistrations()
   loadNotifications()
 });
+
 // Quick Actions Toggle
 document.getElementById("toggleQuickActions").addEventListener("click", () => {
   const actionsContainer = document.getElementById("actionsContainer");
   actionsContainer.classList.toggle("show");
 });
+
 const sidebar = document.querySelector('.sidebar');
 const toggleBtn = document.getElementById('sidebarToggle');
 
@@ -42,7 +45,6 @@ document.addEventListener('click', (e) => {
     sidebar.classList.remove('open');
   }
 });
-
 
 function fetchData(endpoint, elementId) {
   fetch(endpoint, {
@@ -120,7 +122,7 @@ async function loadNotifications() {
             list.appendChild(li);
         });
     } catch (err) {
-        list.innerHTML = "<li>No notifications</li>";
+        list.innerHTML = "<li>Error</li>";
         console.error(err);
     }
 }
@@ -149,8 +151,6 @@ function loadCalendar() {
         calendarFrame.style.display = "none";
         connectBtn.style.display = "inline-block";
     });
-
-    // ✅ Connect Google Calendar
     connectBtn.addEventListener("click", () => {
         window.location.href = "https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Auth/google-login";
     });
