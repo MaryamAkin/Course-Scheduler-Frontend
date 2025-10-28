@@ -17,9 +17,9 @@ if (authToken) {
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchData("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Students/count", "studentCount");
-  fetchData("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/Instructors/count", "instructorCount");
+  fetchData("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Instructors/count", "instructorCount");
   fetchData("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Batches/count", "batchCount");
-  fetchData("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/ api/Courses/count", "courseCount");
+  fetchData("https://course-scheduler-f2h9b0esfafrdtfx.canadacentral-01.azurewebsites.net/api/Courses/count", "courseCount");
   loadRecentActivity()
   loadCalendar()
   loadUnassignedTopics()
@@ -120,7 +120,7 @@ async function loadNotifications() {
             list.appendChild(li);
         });
     } catch (err) {
-        list.innerHTML = "<li>Error loading notifications</li>";
+        list.innerHTML = "<li>No notifications</li>";
         console.error(err);
     }
 }
