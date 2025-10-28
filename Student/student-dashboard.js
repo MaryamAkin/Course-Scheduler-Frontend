@@ -1,3 +1,4 @@
+console.log("entered student dashboard");
 const params = new URLSearchParams(window.location.search);
 
 // Check if token came from the URL (after Google login)
