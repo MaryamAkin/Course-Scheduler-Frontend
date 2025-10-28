@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 
 // Check if token came from the URL (after Google login)
-let tokenFromUrl = params.get("token");
+let tokenFromUrl = params.get("authToken");
 // console.log(tokenFromUrl);
 if (tokenFromUrl) {
   console.log("token from url",tokenFromUrl);
