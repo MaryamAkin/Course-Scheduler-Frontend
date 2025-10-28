@@ -2,7 +2,7 @@ console.log("entered student dashboard");
 const params = new URLSearchParams(window.location.search);
 
 // Check if token came from the URL (after Google login)
-let tokenFromUrl = params.get("authToken");
+let tokenFromUrl = params.get("token");
 // console.log(tokenFromUrl);
 if (tokenFromUrl) {
   console.log("token from url",tokenFromUrl);
@@ -14,6 +14,7 @@ if (tokenFromUrl) {
 } else {
   // If not in URL, try loading from local storage
   let authToken = localStorage.getItem("authToken");
+  console.log(authToken);
   if (!authToken) {
     // No token at all — send to login page
     window.location.href = "/Sign/sign.html";
