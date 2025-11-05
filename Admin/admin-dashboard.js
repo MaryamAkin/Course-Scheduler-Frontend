@@ -333,7 +333,13 @@ function addTopic(event) {
   })
   .then(response => {
     if (!response.ok) throw new Error("Failed to fetch courses");
-    return response.json();
+    
+    // Check if there's JSON content to parse
+    const contentType = response.headers.get('content-type');
+    if (contentType && contentType.includes('application/json')) {
+      return response.json();
+    }
+    return { data: [] };
   })
   .then(result => {
     const courses = result.data || []; // ✅ Extract courses array
@@ -399,7 +405,15 @@ function addTopic(event) {
         })
         .then(response => {
           if (!response.ok) throw new Error("Failed to add topic");
-          return response.json();
+          
+          // Check if there's JSON content to parse
+          const contentType = response.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            return response.json();
+          }
+          
+          // If no JSON content (like 204 No Content), return success indicator
+          return { success: true };
         })
         .then(() => {
           Swal.fire({
@@ -409,16 +423,22 @@ function addTopic(event) {
             timer: 2000,
             showConfirmButton: false
           });
-          setTimeout(() => {
-        window.location.href ="/Topics/topics.html";
-        }, 2000);
+          
           // Step 5: Add to Recent Activity instantly
           const activityList = document.getElementById("activityList");
-          const li = document.createElement("li");
-          li.textContent = `Added new topic: "${title}" to course "${courseTitle}" (${new Date().toLocaleString()})`;
-          activityList.insertBefore(li, activityList.firstChild);
+          if (activityList) {
+            const li = document.createElement("li");
+            li.textContent = `Added new topic: "${title}" to course "${courseTitle}" (${new Date().toLocaleString()})`;
+            activityList.insertBefore(li, activityList.firstChild);
+          }
+          
+          // Redirect after success message
+          setTimeout(() => {
+            window.location.href = "/Topics/topics.html";
+          }, 2000);
         })
-        .catch(() => {
+        .catch((error) => {
+          console.error('Error adding topic:', error);
           Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -428,7 +448,8 @@ function addTopic(event) {
       }
     });
   })
-  .catch(() => {
+  .catch((error) => {
+    console.error('Error loading courses:', error);
     Swal.fire({
       icon: 'error',
       title: 'Error',
@@ -610,7 +631,15 @@ function addInstructor(event) {
       })
       .then(response => {
         if (!response.ok) throw new Error("Failed to add instructor");
-        return response.json();
+        
+        // Check if there's JSON content to parse
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          return response.json();
+        }
+        
+        // If no JSON content (like 204 No Content), return success indicator
+        return { success: true };
       })
       .then(() => {
         Swal.fire({
@@ -620,9 +649,7 @@ function addInstructor(event) {
           timer: 2000,
           showConfirmButton: false
         });
-         setTimeout(() => {
-        window.location.href = "/Instructor/instructors.html";
-        }, 2000);
+        
         // Optional: Add to Recent Activity instantly
         const activityList = document.getElementById("activityList");
         if (activityList) {
@@ -630,8 +657,14 @@ function addInstructor(event) {
           li.textContent = `Added instructor "${name}" (${gender}) at ${new Date().toLocaleString()}`;
           activityList.insertBefore(li, activityList.firstChild);
         }
+        
+        // Redirect after success message
+        setTimeout(() => {
+          window.location.href = "/Instructor/instructors.html";
+        }, 2000);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error('Error adding instructor:', error);
         Swal.fire({
           icon: 'error',
           title: 'Error',
@@ -641,7 +674,6 @@ function addInstructor(event) {
     }
   });
 }
-
 function generateSchedule(event) {
   if (event) event.preventDefault();
 
