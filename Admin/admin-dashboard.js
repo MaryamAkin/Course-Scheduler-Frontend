@@ -122,7 +122,7 @@ async function loadNotifications() {
             list.appendChild(li);
         });
     } catch (err) {
-        list.innerHTML = "<li>Error</li>";
+        list.innerHTML = "<li>No notifications</li>";
         console.error(err);
     }
 }
@@ -270,38 +270,49 @@ function addCourse(event) {
         body: JSON.stringify({ title })
       })
       .then(response => {
-  console.log('Response status:', response.status);
-  console.log('Response ok:', response.ok);
-  console.log('Response headers:', [...response.headers.entries()]);
-  
-  if (!response.ok) {
-    console.log('Response not ok, throwing error');
-    throw new Error(`Failed to add course: ${response.status}`);
-  }
-  return response.json();
-})
-     .then(data => {
-  console.log('Success! Parsed data:', data);
-  // Your success code here
-  Swal.fire({
-    icon: 'success',
-    title: 'Course Added',
-    text: 'The new course has been successfully created.',
-    timer: 2000,
-    showConfirmButton: false
-  });
-  // ... rest of success code
-// })
-        setTimeout(() => {
-        window.location.href = "/Courses/courses.html";
-        }, 2000);
-        // ✅ Add to recent activity instantly without refresh
-        const activityList = document.getElementById("activityList");
-        const li = document.createElement("li");
-        li.textContent = `Added new course: ${title} (${new Date().toLocaleString()})`;
-        activityList.insertBefore(li, activityList.firstChild);
+        console.log('Response status:', response.status);
+        console.log('Response ok:', response.ok);
+        
+        if (!response.ok) {
+          console.log('Response not ok, throwing error');
+          throw new Error(`Failed to add course: ${response.status}`);
+        }
+        
+        // Check if there's JSON content to parse
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          return response.json();
+        }
+        
+        // If no JSON content (like 204 No Content), return success indicator
+        return { success: true };
       })
-      .catch(() => {
+      .then(data => {
+        console.log('Success! Data:', data);
+        
+        Swal.fire({
+          icon: 'success',
+          title: 'Course Added',
+          text: 'The new course has been successfully created.',
+          timer: 2000,
+          showConfirmButton: false
+        });
+        
+        // Add to recent activity instantly without refresh
+        const activityList = document.getElementById("activityList");
+        if (activityList) {
+          const li = document.createElement("li");
+          li.textContent = `Added new course: ${title} (${new Date().toLocaleString()})`;
+          activityList.insertBefore(li, activityList.firstChild);
+        }
+        
+        // Redirect after success message
+        setTimeout(() => {
+          window.location.href = "/Courses/courses.html";
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error('Error adding course:', error);
         Swal.fire({
           icon: 'error',
           title: 'Error',
